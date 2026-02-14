@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The B Playlist 🍓</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #ffdde1; /* soft taffy pink */
+  color: #1a1a1a; /* dark gray font */
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+/* CARD */
+.card {
+  height: 320px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
+  transform-style: preserve-3d;
+}
+
+/* FLIP */
+.card.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* SHARED FACE */
+.face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FRONT */
+.front {
+  background: #ffe8ee; /* soft pastel pink */
+  display: flex;
+  flex-direction: column;
+}
+
+.card.flip .front {
+  visibility: hidden;
+}
+
+.front img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.info {
+  padding: 12px;
+}
+
+.song-title {
+  font-weight: 600;
+  color: #d85c8d; /* slightly deeper pink for title */
+}
+
+.artist {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  color: #d85c8d;
+}
+
+/* BACK */
+.back {
+  background: rgba(255,235,241,0.7); /* almost white with pink tint */
+  transform: rotateY(180deg);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: #1a1a1a;
+}
+
+.back p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+h1 {
+  color: #ff6fae; /* bold pink */
+  text-align: center;
+  margin-bottom: 8px; /* space between h1 and h2 */
+}
+
+h2 {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  color: #ff6fae;
+  margin-top: 0;
+  margin-bottom: 30px; /* space between h2 and grid */
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>The Bunga Playlist 🍓</h1>
+  <h2>curated by Isa.</h2>
+
+  <div class="grid">
+
+    <!-- Example for 15 cards -->
+    <!-- You can duplicate this block or generate dynamically -->
+    <div class="card">
+      <audio src="audio/HeadOverHeels.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/headoverheels.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Head Over Heels</div>
+            <div class="artist">Tears For Tears</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>Back in our first year, I’ve always been hooked on your vanilla scent. 
+		  This song just screams how head over heels I was for you, and your vanilla perfume only made me fall even harder. 
+		  So many times I caught a whiff of the same vanilla from strangers passing by, and I’d have to sniff up close, like half a meter away, just to make sure was it your perfume, or was I trippin’?
+</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <audio src="audio/Kissme.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/kissme.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Kiss Me</div>
+            <div class="artist">Sixpence None The Richer</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>The first time I ever felt truly alive, we kissed while this song played in the background.
+Felt like we were the main characters finally getting our happy ending.
+And a part of me is afraid nothing will ever feel that perfect again.
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/505.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/song2.jpg" alt="">
+          <div class="info">
+            <div class="song-title">505</div>
+            <div class="artist">Arctic Monkeys</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>Ahh, this one’s a classic.
+I still remember us blasting 505 in your mom’s car, right before you dropped me at the station.
+Back then, we were only ninety minutes apart.
+Now it’s a seven-hour flight.
+Funny how the lyrics knew us before we did.
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/BIRDSOFAFEATHER.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/Birds of a feather.jpg" alt="">
+          <div class="info">
+            <div class="song-title">BIRDS OF A FEATHER</div>
+            <div class="artist">Billie Eilish</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>This song gave me shivers that night at McDonald’s while you worked on your task, knowing you’d be leaving for Bali.
+Somehow, it became our go-to karaoke jam, our anthem, especially in our goodbyes.
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/Memories.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/jordi.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Memories</div>
+            <div class="artist">Maroon 5</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>This most-played radio song represents how I’ve been feeling lately. 
+No matter what I do, I always end up thinking of you. 
+Seribu Asmara Abigail pun ga bakal bisa nge-replace lo.</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/TheZephyrSong.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/TheZephyrSong.jpg" alt="">
+          <div class="info">
+            <div class="song-title">The Zephyr Song</div>
+            <div class="artist"> Red Hot Chili Peppers</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>This wasn’t my favorite RHCP song, but ever since you told me it was yours dan bilang kalau lagunya merepresentasikan kita, it became my favorite too. 
+		  Maaf waktu itu ga sengaja ngeskip.</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/GoodLuck,Babe!.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/goodluckbabe.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Good Luck, Babe!</div>
+            <div class="artist">Chappell Roan</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>I first heard this song from you, you said you felt like it was written for you, and it hit me too ‘cause I knew you were lowkey feeling it.
+It later became one of our must-play karaoke songs.
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/Cincin.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/cincin.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Cincin</div>
+            <div class="artist">Hindia</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>This song reminds me of how unstable we were, mentally, financially, emotionally.
+I was only expecting the good parts, and ignoring the rest.
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/Konservatif.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/konservatif.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Konservatif</div>
+            <div class="artist">The Adams</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>This was my ride-home song after we hung out, "jam 9 malam aku pulang".
+Dari film janji joni, back when I was dragging you into Indonesian films.
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/Khayalan.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/khayalan.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Khayalan</div>
+            <div class="artist">The Groove</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>This song is about two people in love, both consciously and unconsciously. 
+For me, it only went down in my dreams, but I was kinda glad those dreams of us felt so real, the love was actually returned.
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/Daylight.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/daylight.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Daylight</div>
+            <div class="artist">Maroon 5</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>I played this song on repeat when you left for Aussie. 
+I kept wishing I hadn’t closed my eyes that last night we spent together, so I could watch you sleep and hold you close.
+That’s when I realized I hate daylight, it always makes our nights together feel too short.
+
+</p>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card">
+      <audio src="audio/You'reTheOneForMe,Fatty.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/youretheone.jpg" alt="">
+          <div class="info">
+            <div class="song-title">You're The One For Me, Fatty</div>
+            <div class="artist">Morrissey</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>Remember that time I showed you this song?
+Sizes and shapes don’t matter, being healthy is what really matters.
+I just want you to be happy, staying fed, and just being you. You’re beautiful without even trying.
+</p>
+        </div>
+      </div>
+    </div>
+
+		<div class="card">
+      <audio src="audio/ForgetJakarta.mp3"></audio>
+      <div class="card-inner">
+        <div class="face front">
+          <img src="images/forgetjakarta.jpg" alt="">
+          <div class="info">
+            <div class="song-title">Forget Jakarta</div>
+            <div class="artist">Adhitia Sofyan</div>
+          </div>
+        </div>
+        <div class="face back">
+          <p>I play this song to avoid reliving the times we wandered around those spots whenever I pass by.
+It never works. only makes me miss you even more.
+</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat similar blocks until 15 cards -->
+  </div>
+
+<footer>
+  We’re still miles apart, same as last year.<br>
+  Will you be my Valentine next year?
+</footer>
+
+</div>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  const audio = card.querySelector('audio');
+
+  card.addEventListener('click', () => {
+    const isFlipped = card.classList.contains('flip');
+
+    // stop all other cards
+    cards.forEach(c => {
+      if (c !== card) {
+        c.classList.remove('flip');
+        const a = c.querySelector('audio');
+        a.pause();
+        a.currentTime = 0;
+      }
+    });
+
+    // toggle this card
+    card.classList.toggle('flip');
+
+    if (!isFlipped) {
+      audio.currentTime = 0;
+      audio.play();
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+});
+</script>
+</body>
+</html>
